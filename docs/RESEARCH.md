@@ -35,3 +35,9 @@ Additional GitHub search found Superactive-AI/inbrowser-ai, jsonfm/ai-local-voic
 ## Reuse and notices
 
 AI Buddy code and procedural robot are original MIT code. Runtime dependencies: Three.js (MIT), Transformers.js (Apache-2.0), ONNX Runtime (MIT); model: Qwen2.5-0.5B-Instruct (Apache-2.0). Fonts are loaded from Google Fonts (DM Sans and Manrope, SIL Open Font License). Dependency copyright/license files remain in their installed packages. Do not remove their required notices in a redistributed bundle. Code visibility alone does not guarantee free services, permissive assets or unrestricted models.
+
+## 1.1 update: online voice
+
+The local model was removed after an iPhone download/reinitialisation report. Pollinations legacy anonymous text was tested directly; it returned Bengali final content with reasoning in a separate field (never displayed/spoken). A quota response was also observed. Current primary API documentation recommends keys; anonymous legacy availability has no guarantee. LLM7 anonymous/default initially responded but subsequent explicit-model calls returned 401, so no LLM7 dependency is shipped.
+
+Bundled fallback: eSpeak NG 1.49.1, compiled browser worker/data from pettarin/espeakng.js-cdn, corresponding source from pettarin/espeak-ng emscripten commit 864d17c7b296067e55a07bfa7902081c4536ca17. GPL-3.0-or-later. Complete source archive, COPYING and provenance are distributed in public/voice; combined build is GPL while original app's MIT grant is retained. Formant speech is compact and synthetic. Browser pack language availability and playback are tested through the app's Settings UI.

@@ -1,17 +1,19 @@
-# Validation — 25 October 2026 JST
+# Validation — 25 October 2026 JST, AI Buddy 1.1
 
-- TypeScript typecheck and production Vite build: passed.
-- Four unit tests: passed (corrupt-storage recovery, context role/length bounds, language/approved memory prompt, emotion cue).
-- Chrome cloud browser: interface loads; settings, light/dark selection and explicit preference save worked; chat and preferences persisted after reload; individual preference deletion worked.
-- Real on-device/browser WASM inference: model downloaded successfully; prompt `Hello! What is 2 plus 2? Please answer in one sentence.` produced `Two plus two equals four!` in the application. This is actual model output, not a canned fallback.
-- Public GitHub Pages deployment: workflow run 40115602057 attempt 2 succeeded; live page opened and local model initialization reached ready.
-- 390px viewport layout inspected in a desktop iframe; this is CSS layout testing, not real iPhone testing.
-- Bengali quality test on public deployment FAILED: a simple name question returned mixed-script nonsense. Bengali remains experimental.
-- A Qwen3-0.6B replacement trial made the cloud browser unresponsive; no successful generation was obtained. It was not deployed. This does not establish a cause or physical-phone compatibility.
-- Voice output attempt reported blocked/interrupted in the cloud browser; audible playback is unverified.
-- WebGL unavailable in the cloud browser: graceful 2D fallback observed. Actual 3D GPU rendering, animations and synchronization remain unverified on hardware.
-- Physical iPhone Safari and Android Chrome microphone permission, STT language accuracy, TTS installed voices, hands-free timing, PWA installation, memory pressure, background suspension and visual responsiveness remain unverified.
-- No API keys are used, stored or bundled. AI inference occurs in the local worker. External model/font requests and browser-vendor speech are described in the app.
-- No cloud provider free-tier inference or database is configured. No recurring fee or unlimited free cloud inference claim.
+## Current online voice fix
 
-The build is functional but hardware voice/3D acceptance is outstanding; it is not represented as fully device-certified production software.
+- TypeScript production build passed; nine unit tests passed (cloud final-content parsing, malformed/truncated replies, cancellation, cooldown, and prior context/storage checks).
+- Browser preview opened immediately with **Online AI · no model download**, including after reload. The large Qwen worker and Transformers/ONNX production dependency were removed.
+- Real browser cloud reply in Bengali: question `তোমার নাম কী? এক বাক্যে উত্তর দাও।` produced `আমার নাম বাডি, আমি একটি AI রোবট সহকারী।` No local model download.
+- Bundled voice worker/data auto-loaded; runtime language list included English and Bengali. Bengali Test voice entered **Speaking Bengali…**, then returned to idle. Audio buffers were scheduled through Web Audio; physical speaker sound/pronunciation and real iPhone behaviour remain unverified.
+- Cloud browser lacks Japanese system voices; the app reports this. Japanese relies on an installed system voice; the bundled 1.49.1 pack does not contain Japanese. No claim that all three voices worked in this cloud browser.
+- Pollinations legacy anonymous endpoint returned 200 with Bengali final content. A separate rate-limit test returned 402 with a 30-second per-IP wait; retry handling is tested. Legacy `openai-audio` returned 404 and is not integrated. LLM7 named-model tests returned 401; not integrated.
+- The free service has no 24/7 SLA or unlimited usage guarantee. No API secret or paid provider was configured.
+- Physical iPhone Safari/Android recognition, installed EN/JA voices, wake lock, background behaviour and latency remain unverified. The app stops foreground voice when hidden.
+- WebGL is unavailable in this cloud browser; robot falls back to 2D. Original GPU animation verification remains outstanding.
+
+## Previous release evidence
+
+The old local model answered basic English arithmetic but failed Bengali quality. Preferences and chat survived reload; preference deletion worked. A Qwen3 replacement trial did not complete successfully and was not deployed. A 390px desktop iframe layout was inspected, not physical iPhone hardware.
+
+The user's screenshot showed progress restarting; it does not uniquely establish cache eviction versus memory/initialisation failure. 1.1 removes the mandatory large-model dependency instead of claiming a physical-device root cause.

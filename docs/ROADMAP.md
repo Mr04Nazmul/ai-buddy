@@ -14,3 +14,7 @@
 3. Optional local Whisper/Silero VAD after mobile CPU and battery profiling; multilingual TTS requires separate language/model license and size checks.
 4. Streaming tokens and incremental speech, sentence timing, phoneme lipsync, safe barge-in.
 5. Optional encrypted memory export/import and opt-in cloud sync. No automatic personal-fact extraction by default.
+
+## 1.1 follow-up priorities
+
+The mandatory local model has been replaced by best-effort online text; a compact voice pack is bundled. Next: real iPhone acceptance, token-backed free-tier provider with secure server-side configuration and quotas, natural Bengali neural voice if a suitable authorized provider is available. No unlimited 24/7 claim is made for anonymous endpoints.
