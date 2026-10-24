@@ -2,9 +2,11 @@
 
 An original, animated Three.js robot companion by Hossain Najmul. Browser-local AI, multilingual browser voice, explicit preference memory, installable PWA. No secret keys or mandatory API subscription.
 
+**Live:** https://mr04nazmul.github.io/ai-buddy/
+
 ## Run
 
-Node 22+: `npm ci`, then `npm run dev`. Production: `npm run build`; serve `dist/` over HTTPS. `npm test` runs context/memory logic checks. GitHub Pages workflow is included; select GitHub Actions in repository Settings → Pages to enable it. Cloudflare Pages: build `npm run build`, output `dist`, no environment variables.
+Node 22+: `npm ci`, then `npm run dev`. Production: `npm run build`; serve `dist/` over HTTPS. `npm test` runs context/memory logic checks. GitHub Pages workflow is included; GitHub Actions is enabled in repository Settings → Pages. Cloudflare Pages: build `npm run build`, output `dist`, no environment variables.
 
 ## Use on iPhone
 
@@ -22,7 +24,7 @@ History retains the last 80 messages; the last 12, capped at 1800 characters eac
 |---|---|
 | 3D original robot, idle, blink, look, wave, dance, happy/sad, sleep, thinking/listening/speaking | Implemented; real GPU/iPhone validation pending |
 | Text AI | Real local Qwen inference; browser QA status in docs/VALIDATION.md |
-| English/Bengali/Japanese | Language controls implemented; small-model quality varies; Bengali may be weak |
+| English/Bengali/Japanese | Language controls implemented; small-model quality varies; Bengali failed a basic quality test; natural Bengali conversation remains incomplete |
 | Speech recognition | Web Speech when provided by browser; typed/keyboard dictation fallback |
 | Speech synthesis | Installed system voices; missing-language voice reported explicitly |
 | Turn taking | Browser end-of-utterance + foreground re-listening; no separate Silero VAD |
